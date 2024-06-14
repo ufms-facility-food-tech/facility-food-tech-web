@@ -16,7 +16,7 @@ export default function Index() {
     <>
       <div className="h-80"></div>
       <div className="h-40 bg-gradient-to-b from-[#f8f1ee] via-[#ffffff] to-[#feeddd]"></div>
-      <div className="bg-white p-12 font-sans">
+      <div className="bg-white p-12 font-sans flex flex-col gap-4">
         <h1 className="text-xl font-bold">Introdução</h1>
         <p>
           Bem-vindo ao nosso site dedicado à pesquisa biológica com enfoque
@@ -37,16 +37,16 @@ export default function Index() {
         <h1 className="text-xl font-bold">Explorando o Site</h1>
         <ul>
           <li>
-            Busca Especializada: Utilize nossa barra de busca para encontrar
+            <strong>Busca Especializada</strong>: Utilize nossa barra de busca para encontrar
             informações detalhadas sobre peptídeos, transcriptômica, proteoma e
             genômica associados ao cerrado e pantanal.
           </li>
           <li>
-            Categorias Específicas: Navegue por seções dedicadas a esses biomas,
+            <strong>Categorias Específicas</strong>: Navegue por seções dedicadas a esses biomas,
             oferecendo uma visão aprofundada e segmentada de nossas pesquisas.
           </li>
           <li>
-            Recursos Complementares: Acesse o glossário de termos, links para
+            <strong>Recursos Complementares</strong>: Acesse o glossário de termos, links para
             artigos científicos, referências e a seção de download para
             aprofundar seus estudos.
           </li>
