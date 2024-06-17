@@ -34,7 +34,7 @@ export function Header() {
               </button>
             </NavLink>
             <NavLink to="/cadastrar">
-              <button className="rounded-full bg-neutral-400 px-5 py-1 font-bold text-white">
+              <button className="rounded-full bg-neutral-400 px-5 py-1 text-lg font-bold text-white">
                 Cadastrar
               </button>
             </NavLink>
