@@ -6,7 +6,7 @@ services:
       - path: .env.dev
         required: false
     environment:
-      - POSTGRES_USER=facility
+      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - facility_db:/var/lib/postgresql/data
@@ -23,8 +23,8 @@ services:
       - facility-db
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/facility
-      - SPRING_DATASOURCE_USERNAME=facility
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://facility-db:5432/facility
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
       - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
