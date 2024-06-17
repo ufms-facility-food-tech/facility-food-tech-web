@@ -28,12 +28,12 @@ export function Header() {
           <div className="font-bold">Acesso Administrador</div>
         ) : (
           <div className="flex gap-4">
-            <NavLink to="/entrar">
+            <NavLink prefetch="intent" to="/entrar">
               <button className="rounded-full bg-cyan-400 px-5 py-1 text-lg font-bold text-white">
                 Entrar
               </button>
             </NavLink>
-            <NavLink to="/cadastrar">
+            <NavLink prefetch="intent" to="/cadastrar">
               <button className="rounded-full bg-neutral-400 px-5 py-1 text-lg font-bold text-white">
                 Cadastrar
               </button>
@@ -46,6 +46,7 @@ export function Header() {
           {routes.map((route) => (
             <li key={route.path}>
               <NavLink
+                prefetch="intent"
                 to={route.path}
                 className={({ isActive }) =>
                   `${
