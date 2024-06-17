@@ -1,7 +1,6 @@
 services:
-
   facility-db:
-    image: 'postgres:13.1-alpine'
+    image: "postgres:13.1-alpine"
     env_file:
       - path: .env
       - path: .env.dev
@@ -45,4 +44,3 @@ volumes:
   caddy_data:
   caddy_config:
   facility_db:
-
