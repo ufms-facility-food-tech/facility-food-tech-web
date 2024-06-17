@@ -1,9 +1,5 @@
-import { Container } from "~/components/container";
+import { Outlet } from "@remix-run/react";
 
 export default function Pesquisa() {
-  return (
-    <Container title="Pesquisa">
-      
-    </Container>
-  );
+  return <Outlet />;
 }

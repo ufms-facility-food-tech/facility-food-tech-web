@@ -31,3 +31,20 @@ export function TextInput(props: {
     </label>
   );
 }
+
+export function TextAreaInput(props: {
+  name: string;
+  label: string;
+  rows?: number;
+}) {
+  return (
+    <label className="flex flex-col text-xl text-cyan-700">
+      {props.label}
+      <textarea
+        className="mt-1 overflow-auto rounded-xl border bg-white p-2 text-base text-black"
+        name={props.name}
+        rows={props.rows || 4}
+      />
+    </label>
+  );
+}
