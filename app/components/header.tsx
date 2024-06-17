@@ -21,7 +21,7 @@ export function Header() {
       <div className="flex h-20 items-center justify-between bg-white px-6">
         <img
           className="h-16 max-w-md text-balance"
-          src="images/lppfb-logo.jpg"
+          src="/images/lppfb-logo.jpg"
           alt="UFMS - LABORATÓRIO DE PURIFICAÇÃO DE PROTEÍNAS E SUAS FUNÇÕES BIOLÓGICAS"
         />
         {isAdmin ? (
