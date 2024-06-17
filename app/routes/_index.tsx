@@ -14,10 +14,19 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <div className="h-80"></div>
+      <div className="h-80">
+        <div className="flex items-center justify-around">
+          <div className="my-9 flex flex-col">
+            <h1 className="text-balance text-center text-4xl font-bold text-white md:w-96">
+              Facility FoodTech do Cerrado-Pantanal
+            </h1>
+          </div>
+          <div className="flex flex-col"></div>
+        </div>
+      </div>
       <div className="h-40 bg-gradient-to-b from-[#f8f1ee] via-[#ffffff] to-[#feeddd]"></div>
-      <div className="bg-white p-12 font-sans flex flex-col gap-4">
-        <h1 className="text-xl font-bold">Introdução</h1>
+      <div className="flex flex-col gap-4 bg-white p-12 font-sans">
+        <h2 className="text-xl font-bold">Introdução</h2>
         <p>
           Bem-vindo ao nosso site dedicado à pesquisa biológica com enfoque
           exclusivo nas riquezas naturais do cerrado e pantanal. Nossa
@@ -25,7 +34,7 @@ export default function Index() {
           Suas Funções Biológicas da UFMS, coordenado pela Profª Drª Maria Lígia
           Rodrigues Macedo.
         </p>
-        <h1 className="text-xl font-bold">Propósito</h1>
+        <h2 className="text-xl font-bold">Propósito</h2>
         <p>
           Nosso objetivo é proporcionar um ambiente virtual abrangente para que
           comunidade científica, estudantes e entusiastas da biologia possam
@@ -34,20 +43,21 @@ export default function Index() {
           transcriptômica, estudo do proteoma e decifração genômica, todos
           alinhados ao ecossistema único dessas regiões brasileiras.
         </p>
-        <h1 className="text-xl font-bold">Explorando o Site</h1>
+        <h2 className="text-xl font-bold">Explorando o Site</h2>
         <ul>
           <li>
-            <strong>Busca Especializada</strong>: Utilize nossa barra de busca para encontrar
-            informações detalhadas sobre peptídeos, transcriptômica, proteoma e
-            genômica associados ao cerrado e pantanal.
+            <b>Busca Especializada</b>: Utilize nossa barra de busca para
+            encontrar informações detalhadas sobre peptídeos, transcriptômica,
+            proteoma e genômica associados ao cerrado e pantanal.
           </li>
           <li>
-            <strong>Categorias Específicas</strong>: Navegue por seções dedicadas a esses biomas,
-            oferecendo uma visão aprofundada e segmentada de nossas pesquisas.
+            <b>Categorias Específicas</b>: Navegue por seções dedicadas a esses
+            biomas, oferecendo uma visão aprofundada e segmentada de nossas
+            pesquisas.
           </li>
           <li>
-            <strong>Recursos Complementares</strong>: Acesse o glossário de termos, links para
-            artigos científicos, referências e a seção de download para
+            <b>Recursos Complementares</b>: Acesse o glossário de termos, links
+            para artigos científicos, referências e a seção de download para
             aprofundar seus estudos.
           </li>
         </ul>
