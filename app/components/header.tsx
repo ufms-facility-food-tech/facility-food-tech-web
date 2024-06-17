@@ -12,7 +12,7 @@ export function Header() {
     { name: "Predição de Peptídeos", path: "/predicao-de-peptideos" },
     { name: "Missão", path: "/missao" },
     { name: "Quem Somos", path: "/quem-somos" },
-    { name: "FAQ", path: "/faq" },
+    { name: "Glossário", path: "/glossario" },
     { name: "Fotos", path: "/fotos" },
   ];
 
