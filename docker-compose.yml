@@ -1,0 +1,48 @@
+services:
+
+  facility-db:
+    image: 'postgres:13.1-alpine'
+    env_file:
+      - path: .env
+      - path: .env.dev
+        required: false
+    environment:
+      - POSTGRES_USER=facility
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - facility_db:/var/lib/postgresql/data
+
+  facility-api:
+    build: api
+    env_file:
+      - path: .env
+      - path: .env.dev
+        required: false
+    ports:
+      - 8080:8080
+    depends_on:
+      - facility-db
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/facility
+      - SPRING_DATASOURCE_USERNAME=facility
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  facility-ui:
+    build: www
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN=${DOMAIN}
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
+  facility_db:
+
