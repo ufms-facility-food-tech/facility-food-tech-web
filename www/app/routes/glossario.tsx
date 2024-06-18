@@ -152,8 +152,12 @@ function GlossaryListItem({
   return (
     <li>
       <h2 className="text-xl font-bold">{item.name}</h2>
-      <p><strong>Definição</strong>: {item.definition}</p>
-      <p><strong>Exemplo</strong>: {item.example}</p>
+      <p>
+        <strong>Definição</strong>: {item.definition}
+      </p>
+      <p>
+        <strong>Exemplo</strong>: {item.example}
+      </p>
     </li>
   );
 }

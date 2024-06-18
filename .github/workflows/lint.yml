@@ -1,0 +1,25 @@
+name: lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: install
+        run: npm ci
+      - name: prettier
+        run: npx prettier -w . --plugin prettier-plugin-tailwindcss --plugin @prettier/plugin-xml --ignore-path .gitignore --ignore-path www/.gitignore --ignore-path api/.gitignore
