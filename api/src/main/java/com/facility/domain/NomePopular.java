@@ -1,57 +1,55 @@
 package com.facility.domain;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import java.io.Serializable;
 
 @Entity
 public class NomePopular implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
+  private static final long serialVersionUID = 1L;
 
-    @ManyToOne
-    @JoinColumn(name = "id_organismo", nullable = false, updatable = true)
-    private Organismo organismo;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public NomePopular() {
+  private String nome;
 
-    }
+  @ManyToOne
+  @JoinColumn(name = "id_organismo", nullable = false, updatable = true)
+  private Organismo organismo;
 
-    public Long getId() {
-        return id;
-    }
+  public NomePopular() {}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public Organismo getOrganismo() {
-        return organismo;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public void setOrganismo(Organismo organismo) {
-        this.organismo = organismo;
-    }
+  public Organismo getOrganismo() {
+    return organismo;
+  }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+  public void setOrganismo(Organismo organismo) {
+    this.organismo = organismo;
+  }
 
+  public static long getSerialversionuid() {
+    return serialVersionUID;
+  }
 }

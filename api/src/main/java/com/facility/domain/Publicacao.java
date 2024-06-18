@@ -1,57 +1,55 @@
 package com.facility.domain;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import java.io.Serializable;
 
 @Entity
 public class Publicacao implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String publicac;
+  private static final long serialVersionUID = 1L;
 
-    @ManyToOne
-    @JoinColumn(name = "id_peptideo", nullable = false, updatable = true)
-    private Peptideo peptideo;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public Publicacao() {
+  private String publicac;
 
-    }
+  @ManyToOne
+  @JoinColumn(name = "id_peptideo", nullable = false, updatable = true)
+  private Peptideo peptideo;
 
-    public Long getId() {
-        return id;
-    }
+  public Publicacao() {}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public String getPublicac() {
-        return publicac;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setPublicac(String publicac) {
-        this.publicac = publicac;
-    }
+  public String getPublicac() {
+    return publicac;
+  }
 
-    public Peptideo getPeptideo() {
-        return peptideo;
-    }
+  public void setPublicac(String publicac) {
+    this.publicac = publicac;
+  }
 
-    public void setPeptideo(Peptideo peptideo) {
-        this.peptideo = peptideo;
-    }
+  public Peptideo getPeptideo() {
+    return peptideo;
+  }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+  public void setPeptideo(Peptideo peptideo) {
+    this.peptideo = peptideo;
+  }
 
+  public static long getSerialversionuid() {
+    return serialVersionUID;
+  }
 }

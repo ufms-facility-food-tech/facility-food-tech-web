@@ -1,11 +1,8 @@
 package com.facility.repository;
 
+import com.facility.domain.CasoSucesso;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.facility.domain.CasoSucesso;
-
 @Repository
-public interface CasoSucessoRepository extends JpaRepository<CasoSucesso, Long> {
-
-}
+public interface CasoSucessoRepository extends JpaRepository<CasoSucesso, Long> {}

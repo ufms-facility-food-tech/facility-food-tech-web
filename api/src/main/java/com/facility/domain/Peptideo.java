@@ -1,7 +1,6 @@
 package com.facility.domain;
 
 import com.facility.enums.TipoPeptideo;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,171 +11,171 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Peptideo {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String peptideo;
-    private Integer quantAas;
-    private TipoPeptideo tipoPeptideo;
-    private String sequencia;
-    private String estruturaTridimensional;
-    private Double massaMolecular;
-    private Double impediEsterico;
-    private Double hidrofobocidade;
-    private Double pontoIsoeletrico;
-    private Double hidropatia;
-    private Double anfipaticidade;
-    private Double hidrofilicidade;
-    private Integer cargaLiquiTotal;
-    private Double indiceBoman;
-    private String descricao;
+  private static final long serialVersionUID = 1L;
 
-    @ManyToOne
-    @JoinColumn(name = "id_organismo", nullable = true, updatable = true)
-    private Organismo organismo;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public Organismo getOrganismo() {
-        return organismo;
-    }
+  private String peptideo;
+  private Integer quantAas;
+  private TipoPeptideo tipoPeptideo;
+  private String sequencia;
+  private String estruturaTridimensional;
+  private Double massaMolecular;
+  private Double impediEsterico;
+  private Double hidrofobocidade;
+  private Double pontoIsoeletrico;
+  private Double hidropatia;
+  private Double anfipaticidade;
+  private Double hidrofilicidade;
+  private Integer cargaLiquiTotal;
+  private Double indiceBoman;
+  private String descricao;
 
-    public void setOrganismo(Organismo organismo) {
-        this.organismo = organismo;
-    }
+  @ManyToOne
+  @JoinColumn(name = "id_organismo", nullable = true, updatable = true)
+  private Organismo organismo;
 
-    public Peptideo() {
-    }
+  public Organismo getOrganismo() {
+    return organismo;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public void setOrganismo(Organismo organismo) {
+    this.organismo = organismo;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Peptideo() {}
 
-    public String getPeptideo() {
-        return peptideo;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setPeptideo(String peptideo) {
-        this.peptideo = peptideo;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public Integer getQuantAas() {
-        return quantAas;
-    }
+  public String getPeptideo() {
+    return peptideo;
+  }
 
-    public void setQuantAas(Integer quantAas) {
-        this.quantAas = quantAas;
-    }
+  public void setPeptideo(String peptideo) {
+    this.peptideo = peptideo;
+  }
 
-    public TipoPeptideo getTipoPeptideo() {
-        return tipoPeptideo;
-    }
+  public Integer getQuantAas() {
+    return quantAas;
+  }
 
-    public void setTipoPeptideo(TipoPeptideo tipoPeptideo) {
-        this.tipoPeptideo = tipoPeptideo;
-    }
+  public void setQuantAas(Integer quantAas) {
+    this.quantAas = quantAas;
+  }
 
-    public String getSequencia() {
-        return sequencia;
-    }
+  public TipoPeptideo getTipoPeptideo() {
+    return tipoPeptideo;
+  }
 
-    public void setSequencia(String sequencia) {
-        this.sequencia = sequencia;
-    }
+  public void setTipoPeptideo(TipoPeptideo tipoPeptideo) {
+    this.tipoPeptideo = tipoPeptideo;
+  }
 
-    public String getEstruturaTridimensional() {
-        return estruturaTridimensional;
-    }
+  public String getSequencia() {
+    return sequencia;
+  }
 
-    public void setEstruturaTridimensional(String estruturaTridimensional) {
-        this.estruturaTridimensional = estruturaTridimensional;
-    }
+  public void setSequencia(String sequencia) {
+    this.sequencia = sequencia;
+  }
 
-    public Double getMassaMolecular() {
-        return massaMolecular;
-    }
+  public String getEstruturaTridimensional() {
+    return estruturaTridimensional;
+  }
 
-    public void setMassaMolecular(Double massaMolecular) {
-        this.massaMolecular = massaMolecular;
-    }
+  public void setEstruturaTridimensional(String estruturaTridimensional) {
+    this.estruturaTridimensional = estruturaTridimensional;
+  }
 
-    public Double getImpediEsterico() {
-        return impediEsterico;
-    }
+  public Double getMassaMolecular() {
+    return massaMolecular;
+  }
 
-    public void setImpediEsterico(Double impediEsterico) {
-        this.impediEsterico = impediEsterico;
-    }
+  public void setMassaMolecular(Double massaMolecular) {
+    this.massaMolecular = massaMolecular;
+  }
 
-    public Double getHidrofobocidade() {
-        return hidrofobocidade;
-    }
+  public Double getImpediEsterico() {
+    return impediEsterico;
+  }
 
-    public void setHidrofobocidade(Double hidrofobocidade) {
-        this.hidrofobocidade = hidrofobocidade;
-    }
+  public void setImpediEsterico(Double impediEsterico) {
+    this.impediEsterico = impediEsterico;
+  }
 
-    public Double getPontoIsoeletrico() {
-        return pontoIsoeletrico;
-    }
+  public Double getHidrofobocidade() {
+    return hidrofobocidade;
+  }
 
-    public void setPontoIsoeletrico(Double pontoIsoeletrico) {
-        this.pontoIsoeletrico = pontoIsoeletrico;
-    }
+  public void setHidrofobocidade(Double hidrofobocidade) {
+    this.hidrofobocidade = hidrofobocidade;
+  }
 
-    public Double getHidropatia() {
-        return hidropatia;
-    }
+  public Double getPontoIsoeletrico() {
+    return pontoIsoeletrico;
+  }
 
-    public void setHidropatia(Double hidropatia) {
-        this.hidropatia = hidropatia;
-    }
+  public void setPontoIsoeletrico(Double pontoIsoeletrico) {
+    this.pontoIsoeletrico = pontoIsoeletrico;
+  }
 
-    public Double getAnfipaticidade() {
-        return anfipaticidade;
-    }
+  public Double getHidropatia() {
+    return hidropatia;
+  }
 
-    public void setAnfipaticidade(Double anfipaticidade) {
-        this.anfipaticidade = anfipaticidade;
-    }
+  public void setHidropatia(Double hidropatia) {
+    this.hidropatia = hidropatia;
+  }
 
-    public Double getHidrofilicidade() {
-        return hidrofilicidade;
-    }
+  public Double getAnfipaticidade() {
+    return anfipaticidade;
+  }
 
-    public void setHidrofilicidade(Double hidrofilicidade) {
-        this.hidrofilicidade = hidrofilicidade;
-    }
+  public void setAnfipaticidade(Double anfipaticidade) {
+    this.anfipaticidade = anfipaticidade;
+  }
 
-    public Integer getCargaLiquiTotal() {
-        return cargaLiquiTotal;
-    }
+  public Double getHidrofilicidade() {
+    return hidrofilicidade;
+  }
 
-    public void setCargaLiquiTotal(Integer cargaLiquiTotal) {
-        this.cargaLiquiTotal = cargaLiquiTotal;
-    }
+  public void setHidrofilicidade(Double hidrofilicidade) {
+    this.hidrofilicidade = hidrofilicidade;
+  }
 
-    public Double getIndiceBoman() {
-        return indiceBoman;
-    }
+  public Integer getCargaLiquiTotal() {
+    return cargaLiquiTotal;
+  }
 
-    public void setIndiceBoman(Double indiceBoman) {
-        this.indiceBoman = indiceBoman;
-    }
+  public void setCargaLiquiTotal(Integer cargaLiquiTotal) {
+    this.cargaLiquiTotal = cargaLiquiTotal;
+  }
 
-    public String getDescricao() {
-        return descricao;
-    }
+  public Double getIndiceBoman() {
+    return indiceBoman;
+  }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+  public void setIndiceBoman(Double indiceBoman) {
+    this.indiceBoman = indiceBoman;
+  }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+  public String getDescricao() {
+    return descricao;
+  }
 
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
+
+  public static long getSerialversionuid() {
+    return serialVersionUID;
+  }
 }
