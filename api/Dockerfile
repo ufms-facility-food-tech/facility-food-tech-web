@@ -1,4 +1,8 @@
+FROM maven:3.9.7-eclipse-temurin-21 as build
+WORKDIR /app
+COPY . .
+RUN --mount=type=cache,target=/root/.m2 ./mvnw -f /app/pom.xml clean package
+
 FROM eclipse-temurin:21-jdk
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY --from=build /app/target/*.jar app.jar
+ENTRYPOINT java -jar /app.jar

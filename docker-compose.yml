@@ -1,10 +1,7 @@
 services:
   facility-db:
     image: "postgres:13.1-alpine"
-    env_file:
-      - path: .env
-      - path: .env.dev
-        required: false
+    env_file: .env
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -13,10 +10,7 @@ services:
 
   facility-api:
     build: api
-    env_file:
-      - path: .env
-      - path: .env.dev
-        required: false
+    env_file: .env
     ports:
       - 8080:8080
     depends_on:
