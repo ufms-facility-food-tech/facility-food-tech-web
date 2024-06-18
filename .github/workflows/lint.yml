@@ -19,10 +19,11 @@ jobs:
           node-version: "lts/*"
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
-      - name: install
-        run: npm ci
       - name: prettier
-        run: npx prettier -w . --plugin prettier-plugin-tailwindcss --plugin @prettier/plugin-xml --ignore-path .gitignore --ignore-path www/.gitignore --ignore-path api/.gitignore
+        working-directory: ./www
+        run: |
+          npm ci
+          npx prettier -w .. --ignore-path .gitignore --ignore-path ../.gitignore --ignore-path ../api/.gitignore
       - name: diff
         id: diff
         run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
