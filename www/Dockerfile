@@ -1,6 +1,6 @@
 FROM node:lts-alpine as node
 COPY . .
-RUN npm install
+RUN npm ci
 RUN npm run build
 
 FROM caddy:alpine
