@@ -13,13 +13,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
-      - name: prettier
+      - name: run prettier
         working-directory: ./www
         run: |
           npm ci
@@ -32,5 +34,24 @@ jobs:
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git commit -am "style: formatted python files"
+          git commit -am "chore: format with prettier"
+          git push
+      - name: setup java
+        uses: actions/setup-java@v3
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+      - name: maven
+        run: ./mvnw clean
+        working-directory: ./api
+      - name: diff
+        id: diff_java
+        run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
+      - name: commit
+        if: steps.diff_java.outputs.modified == 'true'
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git commit -am "chore: format java files"
           git push
