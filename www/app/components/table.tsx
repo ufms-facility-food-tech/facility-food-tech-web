@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export function Table({
   tableHeader,
   data,
@@ -23,6 +25,12 @@ export function Table({
                 {label}
               </th>
             ))}
+            <th
+                scope="col"
+                className="px-6 py-3 font-normal"
+              >
+                Detalhes
+              </th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +44,11 @@ export function Table({
                   {item[propertyName]}
                 </td>
               ))}
+              <td className="px-6 py-4 underline">
+                <Link to={`${item.id}`}>
+                  Detalhes
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
