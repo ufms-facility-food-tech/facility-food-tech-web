@@ -14,7 +14,6 @@ public class OrganismoDTO {
   private String especie;
   private String origem;
   private String familia;
-  private String nomeCientifico;
   List<NomePopularDTO> nomesPopulares;
   List<PeptideoDTO> peptideos;
 
@@ -23,7 +22,6 @@ public class OrganismoDTO {
     this.especie = organismo.getEspecie();
     this.origem = organismo.getOrigem();
     this.familia = organismo.getFamilia();
-    this.nomeCientifico = organismo.getNomeCientifico();
     if (organismo.getNomesPopulares() != null) {
       this.nomesPopulares = organismo
         .getNomesPopulares()
@@ -48,7 +46,6 @@ public class OrganismoDTO {
     organismo.setEspecie(this.getEspecie());
     organismo.setFamilia(this.getFamilia());
     organismo.setOrigem(this.getOrigem());
-    organismo.setNomeCientifico(this.getNomeCientifico());
 
     Set<NomePopular> nomesPopularesEntity = new HashSet<>();
     if (this.getNomesPopulares() != null) {
@@ -103,14 +100,6 @@ public class OrganismoDTO {
 
   public void setFamilia(String familia) {
     this.familia = familia;
-  }
-
-  public String getNomeCientifico() {
-    return nomeCientifico;
-  }
-
-  public void setNomeCientifico(String nomeCientifico) {
-    this.nomeCientifico = nomeCientifico;
   }
 
   public List<NomePopularDTO> getNomesPopulares() {

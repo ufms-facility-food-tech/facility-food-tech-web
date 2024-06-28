@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -19,17 +18,9 @@ public class Organismo implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @NotNull
   private String especie;
-
-  @NotNull
   private String origem;
-
-  @NotNull
   private String familia;
-
-  @NotNull
-  private String nomeCientifico;
 
   @OneToMany(
     mappedBy = "organismo",
@@ -81,14 +72,6 @@ public class Organismo implements Serializable {
 
   public static long getSerialversionuid() {
     return serialVersionUID;
-  }
-
-  public String getNomeCientifico() {
-    return nomeCientifico;
-  }
-
-  public void setNomeCientifico(String nomeCientifico) {
-    this.nomeCientifico = nomeCientifico;
   }
 
   public Set<NomePopular> getNomesPopulares() {

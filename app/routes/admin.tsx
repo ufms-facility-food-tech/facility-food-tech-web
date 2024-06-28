@@ -7,11 +7,7 @@ export default function Admin() {
     {
       label: "Organismos",
       route: "organismos",
-    },
-    {
-      label: "Peptideos",
-      route: "peptideos",
-    },
+    }
   ] satisfies Array<{
     label: string;
     route: `${string & keyof paths extends `/${infer U}` ? U : never}`;

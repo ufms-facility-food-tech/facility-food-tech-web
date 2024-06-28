@@ -1,0 +1,28 @@
+import { Link, Outlet } from "@remix-run/react";
+
+export default function AdminPanel() {
+  return (
+    <div className="flex w-full flex-col items-center gap-6 p-4">
+      <h1 className="text-3xl">Organismos</h1>
+      <div className="flex gap-4">
+        <Link to="edit">
+          <button
+            type="button"
+            className="rounded-full bg-cyan-700 px-5 py-1 text-lg font-bold text-white"
+          >
+            Inserir
+          </button>
+        </Link>
+        <Link to="list">
+          <button
+            type="button"
+            className="rounded-full bg-cyan-700 px-5 py-1 text-lg font-bold text-white"
+          >
+            Listar
+          </button>
+        </Link>
+      </div>
+      <Outlet />
+    </div>
+  );
+}

@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -22,16 +21,9 @@ public class Peptideo {
   private Long id;
 
   private String peptideo;
-
-  @NotNull
   private Integer quantidadeAminoacidos;
-
-  @NotNull
   private TipoPeptideo tipoPeptideo;
-
-  @NotNull
   private String sequencia;
-
   private String estruturaTridimensional;
   private Double massaMolecular;
   private Double impedimentoEsterico;
