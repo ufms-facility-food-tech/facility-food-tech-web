@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -27,14 +28,14 @@ public class Organismo implements Serializable {
     cascade = CascadeType.ALL,
     orphanRemoval = true
   )
-  private Set<NomePopular> nomesPopulares;
+  private Set<NomePopular> nomesPopulares = new HashSet<>();
 
   @OneToMany(
     mappedBy = "organismo",
     cascade = CascadeType.ALL,
-    orphanRemoval = false
+    orphanRemoval = true
   )
-  private Set<Peptideo> peptideos;
+  private Set<Peptideo> peptideos = new HashSet<>();
 
   public Organismo() {}
 
@@ -88,5 +89,25 @@ public class Organismo implements Serializable {
 
   public void setPeptideos(Set<Peptideo> peptideos) {
     this.peptideos = peptideos;
+  }
+
+  public void addPeptideo(Peptideo peptideo) {
+    peptideos.add(peptideo);
+    peptideo.setOrganismo(this);
+  }
+
+  public void removePeptideo(Peptideo peptideo) {
+    peptideos.remove(peptideo);
+    peptideo.setOrganismo(null);
+  }
+
+  public void addNomePopular(NomePopular nomePopular) {
+    nomesPopulares.add(nomePopular);
+    nomePopular.setOrganismo(this);
+  }
+
+  public void removeNomePopular(NomePopular nomePopular) {
+    nomesPopulares.remove(nomePopular);
+    nomePopular.setOrganismo(null);
   }
 }

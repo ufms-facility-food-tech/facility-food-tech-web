@@ -1,11 +1,7 @@
 package com.facility.dto;
 
-import com.facility.model.NomePopular;
 import com.facility.model.Organismo;
-import com.facility.model.Peptideo;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class OrganismoDTO {
@@ -47,25 +43,17 @@ public class OrganismoDTO {
     organismo.setFamilia(this.getFamilia());
     organismo.setOrigem(this.getOrigem());
 
-    Set<NomePopular> nomesPopularesEntity = new HashSet<>();
     if (this.getNomesPopulares() != null) {
-      for (NomePopularDTO nomePopularDTO : this.getNomesPopulares()) {
-        NomePopular nomePopular = new NomePopular();
-        nomePopular.setId(nomePopularDTO.getId());
-        nomePopular.setNome(nomePopularDTO.getNome());
-        nomePopular.setOrganismo(organismo);
-        nomesPopularesEntity.add(nomePopular);
+      for (NomePopularDTO nomePopular : this.getNomesPopulares()) {
+        organismo.addNomePopular(nomePopular.toEntity());
       }
     }
-    organismo.setNomesPopulares(nomesPopularesEntity);
 
-    Set<Peptideo> peptideosEntity = new HashSet<>();
     if (this.getPeptideos() != null) {
       for (PeptideoDTO peptideoDTO : this.getPeptideos()) {
-        peptideosEntity.add(peptideoDTO.toEntity());
+        organismo.addPeptideo(peptideoDTO.toEntity());
       }
     }
-    organismo.setPeptideos(peptideosEntity);
 
     return organismo;
   }
