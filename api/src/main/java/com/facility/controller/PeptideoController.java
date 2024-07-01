@@ -46,7 +46,7 @@ public class PeptideoController {
   }
 
   @GetMapping(path = { "/{id}" })
-  public ResponseEntity<PeptideoDTO> findById(@PathVariable Long id) {
+  public ResponseEntity<PeptideoDTO> findById(@PathVariable String id) {
     return peptideoRepository
       .findById(id)
       .map(record -> ResponseEntity.ok().body(new PeptideoDTO(record)))
@@ -55,7 +55,7 @@ public class PeptideoController {
 
   @PutMapping(value = "/{id}")
   public ResponseEntity<PeptideoDTO> update(
-    @PathVariable("id") Long id,
+    @PathVariable("id") String id,
     @RequestBody PeptideoDTO peptideoDTO
   ) {
     return peptideoRepository
@@ -69,7 +69,7 @@ public class PeptideoController {
   }
 
   @DeleteMapping(path = { "/{id}" })
-  public ResponseEntity<?> delete(@PathVariable Long id) {
+  public ResponseEntity<?> delete(@PathVariable String id) {
     return peptideoRepository
       .findById(id)
       .map(record -> {

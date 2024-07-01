@@ -9,13 +9,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 public class FuncBiologica {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  @GenericGenerator(
+    name = "funcbio_seq",
+    strategy = "com.facility.model.PrefixedGenerator",
+    parameters = { @Parameter(name = "prefix", value = "funcbio_") }
+  )
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "funcbio_seq")
+  private String id;
 
   @NotNull
   private String descricao;
@@ -28,11 +35,11 @@ public class FuncBiologica {
 
   public FuncBiologica() {}
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

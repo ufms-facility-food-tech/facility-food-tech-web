@@ -1,25 +1,28 @@
 package com.facility.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
 import java.util.HashSet;
 import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 public class Organismo {
 
-
-
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  @GenericGenerator(
+    name = "org_seq",
+    strategy = "com.facility.model.PrefixedGenerator",
+    parameters = { @Parameter(name = "prefix", value = "org_") }
+  )
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "org_seq")
+  private String id;
 
   private String especie;
   private String origem;
@@ -43,11 +46,11 @@ public class Organismo {
 
   public Organismo() {}
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

@@ -2,18 +2,17 @@ package com.facility.dto;
 
 import com.facility.model.NomePopular;
 import com.facility.model.Organismo;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 public class OrganismoDTO {
 
-  private Long id;
+  private String id;
   private String especie;
   private String origem;
   private String familia;
+
   @JsonManagedReference
   List<NomePopular> nomesPopulares;
 
@@ -30,11 +29,11 @@ public class OrganismoDTO {
 
   public OrganismoDTO() {}
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AtivAntifungicaRepository
-  extends JpaRepository<AtivAntifungica, Long> {}
+  extends JpaRepository<AtivAntifungica, String> {}

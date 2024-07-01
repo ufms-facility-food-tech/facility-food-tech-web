@@ -37,7 +37,7 @@ public class OrganismoController {
   }
 
   @GetMapping(path = { "/{id}" })
-  public ResponseEntity<Organismo> findById(@PathVariable Long id) {
+  public ResponseEntity<Organismo> findById(@PathVariable String id) {
     return organismoRepository
       .findById(id)
       .map(record -> ResponseEntity.ok().body(record))
@@ -46,7 +46,7 @@ public class OrganismoController {
 
   @PutMapping(value = "/{id}")
   public ResponseEntity<Organismo> update(
-    @PathVariable("id") Long id,
+    @PathVariable("id") String id,
     @RequestBody Organismo organismo
   ) {
     organismo.setId(id);
@@ -59,7 +59,7 @@ public class OrganismoController {
   }
 
   @DeleteMapping(path = { "/{id}" })
-  public ResponseEntity<?> delete(@PathVariable Long id) {
+  public ResponseEntity<?> delete(@PathVariable String id) {
     return organismoRepository
       .findById(id)
       .map(record -> {

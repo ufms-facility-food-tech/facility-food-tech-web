@@ -9,13 +9,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 public class Publicacao {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  @GenericGenerator(
+    name = "pub_seq",
+    strategy = "com.facility.model.PrefixedGenerator",
+    parameters = { @Parameter(name = "prefix", value = "pub_") }
+  )
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private String id;
 
   @NotNull
   private String url;
@@ -28,11 +35,11 @@ public class Publicacao {
 
   public Publicacao() {}
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

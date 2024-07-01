@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface NomePopularRepository
-  extends JpaRepository<NomePopular, Long> {}
+  extends JpaRepository<NomePopular, String> {}

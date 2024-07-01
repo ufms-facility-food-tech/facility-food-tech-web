@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class PeptideoDTO {
 
-  private Long id;
+  private String id;
   private String peptideo;
   private Integer quantidadeAminoacidos;
   private TipoPeptideo tipoPeptideo;
@@ -177,11 +177,11 @@ public class PeptideoDTO {
     return peptideoEntity;
   }
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

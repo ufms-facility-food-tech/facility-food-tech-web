@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CasoSucessoRepository
-  extends JpaRepository<CasoSucesso, Long> {}
+  extends JpaRepository<CasoSucesso, String> {}

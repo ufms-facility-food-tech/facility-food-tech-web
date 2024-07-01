@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CaracterisAdicionaisRepository
-  extends JpaRepository<CaracterisAdicionais, Long> {}
+  extends JpaRepository<CaracterisAdicionais, String> {}
