@@ -8,10 +8,10 @@ export default function Admin() {
       label: "Organismos",
       route: "organismos",
     },
-    {
-      label: "Peptideos",
-      route: "peptideos",
-    },
+    // {
+    //   label: "Peptideos",
+    //   route: "peptideos",
+    // },
   ] satisfies Array<{
     label: string;
     route: `${string & keyof paths extends `/${infer U}` ? U : never}`;
@@ -31,7 +31,7 @@ export default function Admin() {
             </ul>
           </nav>
         </aside>
-        <Outlet context={{ navLinks }} />
+        <Outlet />
       </div>
     </Container>
   );
